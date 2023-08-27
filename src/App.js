@@ -1,24 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+
+
+import MainLayout from "./Components/MainLayout/MainLayout";
+import Maxsulotlar from "./Components/Pages/Maxsulotlar/Maxsulotlar";
+import Buyurtmalar from "./Components/Pages/Buyurtmalar/Buyurtmalar";
+import Mijozlar from "./Components/Pages/Mijozlar/Mijozlar";
+import Login from "./Components/Login";
+import { useState } from "react";
+
+// import { Settings } from "./Components/Settings";
+
+
+
+
 
 function App() {
+  const get = localStorage.getItem('token')
+
+  const [token, setToken] = useState(get?.token || '');
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    token ?
+      <BrowserRouter>
+        <Routes>
+
+          <Route path="*" element={<MainLayout />}>
+            <Route path="maxsulotlar" element={<Maxsulotlar />} />
+            <Route path="mijozlar" element={<Mijozlar />} />
+            <Route path="buyurtmalar" element={<Buyurtmalar />} />
+            {/* <Route path="settings" element={<Settings />} /> */}
+
+          </Route>
+        </Routes>
+      </BrowserRouter>
+
+      : <Login setToken={setToken} />
   );
 }
 

@@ -1,0 +1,117 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,500&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    list-style: none;
+    text-decoration: none;
+
+}
+
+.body {
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wrapper {
+    width: 100%;
+    display: flex;
+
+}
+
+.rc-table {
+    width: 100%;
+    // height: 100vh;
+    height: 500px;
+    flex-shrink: 0;
+    border-radius: 10px;
+    border: 1px solid #D2D2D2;
+    background: #FFF;
+    overflow: hidden;
+
+}
+
+.rc-table-content {
+    width: 100%;
+    height: 445px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    &>table {
+        border-collapse: collapse;
+    }
+}
+
+th-row {
+    border-radius: 10px 10px 0px 0px;
+    background: var(--dark, #2E3444);
+    border: none;
+    /* border-radius: 10px; */
+}
+
+.rc-table-container-thead {
+    border-radius: 10px;
+
+    text-align: center;
+    /* color: #fff; */
+    /* border-radius: 10px 10px 0px 0px; */
+    /* background: var(--dark, #2E3444); */
+
+}
+
+.rc-table-thead {
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    border-radius: 10px 10px 0px 0px;
+    background: var(--dark, #2E3444);
+}
+
+.rc-table-cell {
+    padding: 20px;
+    width: 300px;
+}
+
+.rc-table-cell.enabled {
+    color: green;
+
+}
+
+// .rc-table-row .rc-table-cell:nth-child(3) {
+//     // color: red;
+// }
+
+.rc-table-footer {
+
+    background: #FFF;
+    padding: 20px;
+}
+
+
+
+/* rc-table: This is the main container class for the entire table component.
+
+rc-table-header: This class is applied to the header section of the table.
+
+rc-table-content: This class is applied to the content section of the table.
+
+rc-table-cell: This class is often used for individual table cells within the content section.
+
+rc-table-row: This class is used for rows within the content section.
+
+rc-table-row-hover: This class might be applied to rows when they are hovered over.
+
+rc-table-row-selected: This class could be used to highlight selected rows.
+
+rc-table-row-expand-icon-cell: This class may be applied to the cell containing the expand icon for expandable rows.
+
+rc-table-expand-icon: This class is associated with the expand icon */
